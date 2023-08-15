@@ -89,7 +89,7 @@
  </symbol>
 
  <!-- Modal Icon -->
- <symbol id="icon-close" viewBox="0 0 8 8">
+ <symbol id="iconclose" viewBox="0 0 8 8">
     <path fill="#2E2F42" d="M8 .8 7.2 0 4 3.2.8 0 0 .8 3.2 4 0 7.2l.8.8L4 4.8 7.2 8l.8-.8L4.8 4 8 .8Z"/>
     </symbol>
 
