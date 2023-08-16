@@ -141,12 +141,29 @@ body {
   margin-left: 93px;
 }
 
-.current {
+.page {
   position: relative;
   color: var(--iris);
 }
 
-.current::after {
+.page::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 0;
+  height: 4px;
+  border-radius: 2px;
+  transition: width 250ms ease-in-out, background-color 250ms ease-in-out;
+}
+.page:hover::after,
+.page:focus::after {
+  border: 2px solid var(--ocean);
+  background-color: var(--ocean);
+  width: 100%;
+}
+
+.page.current::after {
   content: "";
   position: absolute;
   left: 0;
@@ -154,8 +171,8 @@ body {
   width: 100%;
   height: 4px;
   border-radius: 2px;
-  border: 2px solid var(--iris);
-  background-color: var(--iris);
+  border: 2px solid var(--ocean);
+  background-color: var(--ocean);
 }
 
 .contacts-menu {
@@ -237,6 +254,11 @@ body {
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
+}
+
+.filters .button.filter {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filters .space + .space {
@@ -585,7 +607,7 @@ body {
   letter-spacing: 0.32px;
   color: var(--cloud);
   background-color: var(--iris);
-  transform: translateY(100%);
+  transform: translateY(101%);
   transition: transform 250ms ease-in-out;
 }
 .cover:hover .text {
@@ -627,8 +649,8 @@ body {
 
 .close {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 24px;
+  right: 24px;
   padding: 0px;
 
   display: flex;
@@ -640,26 +662,25 @@ body {
   height: 24px;
 
   background-color: var(--cornflower);
-  color: var(--grey);
+  color: var(--navy-blue);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   cursor: pointer;
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms ease-in-out;
 }
 
 .x-close {
   width: 8px;
   height: 8px;
-  fill: var(--navy-blue);
+  fill: currentColor;
 }
 
 .close:hover,
-.close:focus,
-.x-close:hover,
-.x-close:focus {
+.close:focus {
   background-color: var(--ocean);
-  fill: var(--white);
+  color: var(--white);
 }
 /* .x-close:hover,
 .x-close:focus {
